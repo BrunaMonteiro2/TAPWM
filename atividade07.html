@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade 07 - TAPWM</title>
+
+</head>
+
+<body>
+    <h1>Pedra, Papel ou Tesoura?</h1>
+    <p>Escolha um:</p>
+    <button id="pedra">Pedra</button>
+    <button id="papel">Papel</button>
+    <button id="tesoura">Tesoura</button>
+    <div id="result"></div>
+
+
+    <script>
+        const escolhaUsuario = document.querySelectorAll("button");
+        const resultDiv = document.getElementById("result");
+
+        escolhaUsuario.forEach((escolha) => {
+            escolha.addEventListener("click", () => {
+                const escolhaUsuario = escolha.id;
+                const escolhaComputador = getEscolhaComputador();
+                const result = getResult(escolhaUsuario, escolhaComputador);
+                showResult(result, escolhaUsuario, escolhaComputador);
+            });
+        });
+
+        function getEscolhaComputador() {
+            const choices = ["pedra", "papel", "tesoura"];
+            const randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function getResult(usuario, computador) {
+            if (usuario === computador) {
+                return "Empate. ";
+            } else if (
+                (usuario === "pedra" && computador === "tesoura") ||
+                (usuario === "papel" && computador === "pedra") ||
+                (usuario === "tesoura" && computador === "papel")
+            ) {
+                return "Isso aí! ";
+            } else {
+                return "O computador venceu! ";
+            }
+        }
+
+        function showResult(result, escolhaUsuario, escolhaComputador) {
+            resultDiv.textContent = `${result} Sua escolha foi: ${escolhaUsuario}, e a do computador f ${escolhaComputador}.`;
+        }
+
+    </script>
+</body>
+
+</html>
