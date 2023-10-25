@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13 - BRUNA</title>
+</head>
+<body>
+    <h1>Calcular Área de Retângulo</h1>
+
+    <p>Base: <input type="text" id="base"></p>
+    <p>Altura: <input type="text" id="altura"></p>
+    <p><button onclick="calcularArea()">Calcular Área</button></p>
+    <p>Área do Retângulo: <span id="resultado"></span></p>
+    <h1>Dados da Conta</h1>
+
+    <p>Nome Correntista: <input type="text" id="nomeCorrentista"></p>
+    <p>Banco: <input type="text" id="banco"></p>
+    <p>Número da Conta: <input type="text" id="numeroConta"></p>
+    <p>Saldo: <input type="text" id="saldo"></p>
+    <p><button onclick="exibirDadosConta()">Exibir Dados da Conta</button></p>
+    <p id="dadosConta"></p>
+  
+    <script>
+      function calcularArea() {
+        var base = parseFloat(document.getElementById("base").value);
+        var altura = parseFloat(document.getElementById("altura").value);
+        var area = base * altura;
+        document.getElementById("resultado").innerText = area;
+      }
+  
+      function exibirDadosConta() {
+        var nomeCorrentista = document.getElementById("nomeCorrentista").value;
+        var banco = document.getElementById("banco").value;
+        var numeroConta = document.getElementById("numeroConta").value;
+        var saldo = parseFloat(document.getElementById("saldo").value);
+  
+        var dadosConta = "Nome Correntista: " + nomeCorrentista + "<br>";
+        dadosConta += "Banco: " + banco + "<br>";
+        dadosConta += "Número da Conta: " + numeroConta + "<br>";
+        dadosConta += "Saldo: " + saldo;
+  
+        document.getElementById("dadosConta").innerHTML = dadosConta;
+      }
+    </script>
+</body>
+</html>
