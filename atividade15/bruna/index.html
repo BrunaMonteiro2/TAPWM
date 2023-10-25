@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1 id="status">Janela Fechada</h1>
+        <img id="janela" src="janela_fechada.jpg" alt="Janela Fechada" width="300" height="200">
+         
+            <script>
+                const janela = document.getElementById("janela");
+                const status = document.getElementById("status");
+         
+                janela.addEventListener("mouseover", function() {
+                    janela.src = "janela_aberta.jpg";
+                    status.textContent = "Janela Aberta";
+                });
+         
+                janela.addEventListener("mouseout", function() {
+                    janela.src = "janela_fechada.jpg";
+                    status.textContent = "Janela Fechada";
+                });
+         
+                janela.addEventListener("click", function() {
+                    janela.src = "janela_quebrada.jpg";
+                    status.textContent = "Janela Quebrada";
+                });
+        </script>
+    </script>
+</body>
+</html>
