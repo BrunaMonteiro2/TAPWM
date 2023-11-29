@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Questão 01: Criar dois objetos (objLivro1 e objLivro2) com 2 propriedades (Titulo e Autor). 
+            //Usar duas formas diferentes (entre aquelas vistas em aula).
+            var ObjLivro1 = {
+                Titulo: "Dom Casmurro",
+                Autor: "Machado de Assis"
+            }
+            alert(ObjLivro1.Titulo + " - " + ObjLivro1.Autor)
+
+            var ObjLivro2 = {};
+            ObjLivro2.Titulo = "Dom Casmurro";
+            ObjLivro2.Autor =  "Machado de Assis";
+
+            var ObjLivro3 = new Object();
+            ObjLivro3.Titulo = "Dom Casmurro";
+            ObjLivro3.Autor = "Machado de Assis";
+
+            //Definindo uma função construtora Livro
+            function Livro(_Titulo, _Autor)
+            {
+                this.Titulo = _Titulo;
+                this.Autor = _Autor;
+            }
+            var ObjLivro4 = new Livro('Dom Casmurro', "Machado de Assis");
+
+            //Definindo a classe Livro1
+            class Livro1 {
+                constructor(titulo, autor){
+                    this.titulo = titulo;
+                    this.autor = autor;
+                }
+            }
+            const ObjLivro5 = new Livro1("Título do Livro", "Autor do Livro");
+
+
+
+        //Questão 02: Qual será o resultado impresso na tela:
+            var i = 1 + "2" + 3
+            for (j = 0; j < 10; j++){
+                alert(`${i}${j}`);
+                if(j === 5)
+                break; }
+                //RESPOSTA: 1230, 1231, 1232, 1233, 1234, 1235
+
+
+
+        //Questão 03: onsiderando o código abaixo, o que será mostrado no console?
+            var novoArray = [3, 1, 24, 32, 10, 15, 2];
+            novoArray.sort();
+            novoArray.reverse();
+            console.log(novoArray);
+            //RESPOSTA: alternativa d: 32, 33, 24, 2, 15, 10, 1
+
+
+
+        //Questão 04: Considerando como parâmetros da função3, o penultimo e o ultimo digito do seu ra, o alert resultará:
+            funcao1 = function(n) {
+                return(Math.pow(n,3));
+            }
+
+            funcao2 = function(n1, n2){
+                return funcao1(Math.min(n1,n2));
+            }
+
+            funcao3 = function(x, y){
+                return funcao2(x,y);
+            }
+            var penultimo = prompt("Digite o penúltimo digito do seu ra");
+            var ultimo = prompt("Digite o último digito do seu ra");
+            alert(funcao3(penultimo, ultimo));
+            //RESPOSTA: 1
+
+
+
+        //Questão 05: Escreva uma função declarada (ou expressao de função ) que recebe 3 números, e coloca eles em ordem decrescente
+        function Ordena(n1, n2, n3){
+            var matriz = [n1, n2, n3];
+            matriz.sort(function(a,b) {b-a});
+            return matriz;
+        }
+        alert(Ordena(5,2,2));
+
+        function Ordena2(n1, n2, n3){
+            var matriz = [n1, n2, n3];
+            matriz.sort(function(a,b) {b-a});
+            matriz.reverse();
+            return matriz;
+        }
+        alert(Ordena(5,2,2));
+        
+        function Ordena3(n1, n2, n3){
+            let maior = Math.max(n1, n2, n2);
+            let menos = Math.min(n1, n2, n3);
+            let meio;
+            if(n1 !== maior && n1 !== menor){
+                meio = n1;
+            }else if(n2 !== maior && menor){
+                meio = n2;
+            }else{
+                meio = n3;
+            }
+            return `${maior} ${meio} ${menor}`;
+        }
+        alert(Ordena3(10, 5, 8));
+
+
+        //Questão 06: O JSON é um formato simples e popular para armazenar e transferir dados aninhados ou hierárquicos. É bastate comum na web, usado para enviar dados de um servidor para um navegador web ou para transferir dados entre sistemas. No exemplo a seguir, supondo que foram recebidos os dados da variável texto, acrescente uma linha com alert, para imprimir os dados recebidos.
+            var texto = '{"descricao",  "Produto A", "codigo", 123}';
+            var objeto = JSON.parse(texto);
+            //RESPOSTA: alert(objeto.descricao + " " + objeto.codigo);
+
+        //Questão 07: Sipondo o seguinte código, informe o que será impresso em casa console?
+            //RESPOSTA: undefined, NAN, infinity e null
+
+        //Questão 08: No código abaixo, escolha a opção que representa o resultado dos consoles:
+            //RESPOSTA: alternativa e: Nenhuma das anteriores
+
+        //Questão 09:  Informe o resultado do alert:
+            var entrada = 1 + 2 + "3" + 4;
+            var saida = "";
+            for(var i = 0; i < 5; i++){
+                saída += entrada + i + " ";
+            }
+            alert(saida);
+            //RESPOSTA: 3340, 3341, 3342, 3343, 3344
+
+        //Questão 10: Supondo o formulário:
+            //RESPOSTA: alternativa c : Somente 1, 2, 3, 4, 5, 6
+
+        //Questão 11: No codigo abaixo, o elemento <body> tem __ child(s).  O elemento <script> é nextSimbling  do elemento ___. O elemento  <title> tem __ child(s), e o elemento <form> tem __ child(s):
+            //RESPOSTA: 1, <title, <form>, 1, 4.
+
+        //Questão 12: Complete os quadros com os nomes dos objetos da Hierarquia de objetos DOM (Document Object Model):
+                //Window
+
+        //RESPOSTA:        
+                //document
+                // history
+                //location
+                //navigator
+
+                //links[]
+                //anchors[]
+                //images[]
+                //forms[]
+
+                //button, input, textarea..
+
+
+
+        //Questão 13: Bônus: Elabore uma questão e responda sobre algum assunto visto em TAPWM (e que não está na avaliação)
+        
+            //Faça um comando para descobrir se a pessoa é maior de idade
+            var idade = prompt("Qual a sua idade?");
+
+            if(idade < 18){
+                console.log("Você é menor de idade");
+            }else{
+                console.log("Você é maior de idade");
+            }
+        
+    </script>
+</body>
+</html>
